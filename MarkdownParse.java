@@ -22,7 +22,10 @@ public class MarkdownParse {
             }
             int closeParen = markdown.indexOf(")", openParen);
             if(closeParen==-1) break;
-            toReturn.add(markdown.substring(openParen + 1, closeParen));
+            if(markdown.substring(openParen + 1, closeParen).contains("html")||markdown.substring(openParen + 1, closeParen).contains("com")||
+            markdown.substring(openParen + 1, closeParen).contains("http")){
+                toReturn.add(markdown.substring(openParen + 1, closeParen));
+            }
             currentIndex = closeParen + 1;
             
         }
