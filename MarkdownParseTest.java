@@ -31,4 +31,8 @@ public class MarkdownParseTest {
 	    String contents = Files.readString(fileName);
         assertEquals(List.of(), MarkdownParse.getLinks(contents));
     }
+    @Test
+    public void testFail(){
+	    assertEquals(2,3);
+    }
 }
