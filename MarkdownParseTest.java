@@ -35,4 +35,10 @@ public class MarkdownParseTest {
     public void testFail(){
 	    assertEquals(2,2);
     }
+    @Test
+    public void testParse2() throws IOException{
+        Path fileName = Path.of("test-file10.md");
+	    String contents = Files.readString(fileName);
+        assertEquals(List.of(), MarkdownParse.getLinks(contents));
+    }
 }
